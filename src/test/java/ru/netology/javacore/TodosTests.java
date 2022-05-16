@@ -21,7 +21,7 @@ public class TodosTests {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"Изготовление", "Тестирование", "Ремонт"})
+    @ValueSource(strings = {"Создание", "Тест", "Ремонт"})
     public void testAddTaskEquals(String task) {
         todos.addTask(task);
         String expected = task;
@@ -30,8 +30,8 @@ public class TodosTests {
 
     @Test
     public void testRemoveTaskEquals() {
-        String task1 = "Изготовление";
-        String task2 = "Тестирование";
+        String task1 = "Создание";
+        String task2 = "Тест";
         String expected = task1; // Ожидаем что останется после удаления только task1
 
         todos.addTask(task1);
@@ -43,11 +43,11 @@ public class TodosTests {
 
     @Test
     public void testAllTaskEquals() {
-        String task1 = "Изготовление";
-        String task2 = "Тестирование";
+        String task1 = "Создание";
+        String task2 = "Тест";
         String task3 = "Ремонт";
         String separator = " ";
-        String expected = task2 + separator + task1 + separator + task3; // Ожидаемый вывод после сортировки
+        String expected = task3 + separator + task1 + separator + task2; // Ожидаемый вывод после сортировки
 
         todos.addTask(task1);
         todos.addTask(task2);
